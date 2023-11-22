@@ -18,7 +18,7 @@ def validSen(sen):
         return False
     
     # Put conditional statement to ensure umbers below 13 are spelled out
-    words = re.findall(r'\b\w+\b', sentence) # This function checks all words in sentence
+    words = re.findall(r'\b\w+\b', sen) # This function checks all words in sentence
     for word in words:
         if word.isdigit() and int(word) < 13: # This function takes out the digits in sentence
             return False
@@ -43,6 +43,6 @@ invalid = [
     'There is no punctuation in this sentence' #Invalid
 ]
 
-for sentence in valid + invalid:
-    result = validSen(sentence)
-    print(f'{sentence}\n{"Valid" if result else "Invalid"}\n')
+for sen in valid + invalid:
+    result = validSen(sen)
+    print(f'{sen}\n{"Valid" if result else "Invalid"}\n')
